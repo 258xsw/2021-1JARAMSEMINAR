@@ -1,4 +1,4 @@
-# 2021-1JARAMSEMINAR
+# 2021-1_JARAM_STUDY
 자료구조를 곁들인 C언어
 
 자람36기 김현정
