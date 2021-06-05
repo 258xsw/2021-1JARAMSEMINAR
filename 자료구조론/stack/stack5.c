@@ -3,7 +3,7 @@
 #include <string.h>
 #define MAX_STACK_SIZE 100
 
-//°ýÈ£ °Ë»ç ÇÁ·Î±×·¥
+//ê´„í˜¸ ê²€ì‚¬ í”„ë¡œê·¸ëž¨
 typedef char element;
 typedef struct {
     element data[MAX_STACK_SIZE];
@@ -38,7 +38,7 @@ void push (StackType *s, element item)
     element pop(StackType *s)
     {
         if(is_empty(s)) {
-            fprintf(stderr, "½ºÅÃ °ø¹é ¿¡·¯\n");
+            fprintf(stderr, "ìŠ¤íƒ ê³µë°± ì—ëŸ¬\n");
             exit(1); 
         }
         else return s -> data[(s -> top)--];
@@ -47,7 +47,7 @@ void push (StackType *s, element item)
 element peek(StackType *s)
 {
     if(is_empty(s)) {
-        fprintf(stderr, "½ºÅÃ Æ÷È­ ¿¡·¯\n");
+        fprintf(stderr, "ìŠ¤íƒ í¬í™” ì—ëŸ¬\n");
         exit(1);
     }
     else return s -> data[s -> top]; 
@@ -87,8 +87,8 @@ int check_matching(const char * in)
 int main(void){
     char *p = "{A[(i+1)] = 0;}";
     if(check_matching(p) == 1)
-        printf("%s °ýÈ£ °Ë»ç ¼º°ø\n", p);
+        printf("%s ê´„í˜¸ ê²€ì‚¬ ì„±ê³µ\n", p);
     else
-        printf("%s °ýÈ£ °Ë»ç ½ÇÆÐ\n", p);
+        printf("%s ê´„í˜¸ ê²€ì‚¬ ì‹¤íŒ¨\n", p);
     return 0;
 }
