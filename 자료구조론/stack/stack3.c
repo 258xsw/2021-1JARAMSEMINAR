@@ -10,57 +10,57 @@ typedef struct {
     int top;
 } StackType;
 
-//½ºÅÃ ÃÊ±âÈ­ ÇÔ¼ö
+//ìŠ¤íƒ ì´ˆê¸°í™” í•¨ìˆ˜
 
 void init_stack(StackType *s)
 {
     s -> top = -1;
 }
 
-//°ø¹é »óÅÂ °ËÃâ ÇÔ¼ö
+//ê³µë°± ìƒíƒœ ê²€ì¶œ í•¨ìˆ˜
 int is_empty(StackType *s)
 {
     return (s -> top == -1);
 }
 
-//Æ÷È­ »óÅÂ °ËÃâ ÇÔ¼ö
+//í¬í™” ìƒíƒœ ê²€ì¶œ í•¨ìˆ˜
 int is_full (StackType *s)
 {
     return (s -> top == (MAX_STACK_SIZE -1));
 }
 
-//»ðÀÔ ÇÔ¼ö
+//ì‚½ìž… í•¨ìˆ˜
 void push (StackType *s, element item)
 {
     if(is_full(s)){
-        fprintf(stderr, "½ºÅÃ Æ÷È­ ¿¡·¯\n");
-        return; //ÇØ´ç ÇÔ¼ö¸¸ Á¾·á
+        fprintf(stderr, "ìŠ¤íƒ í¬í™” ì—ëŸ¬\n");
+        return; //í•´ë‹¹ í•¨ìˆ˜ë§Œ ì¢…ë£Œ
     }
     else s -> data[++(s->top)] = item;
 }
 
-    //»èÁ¦ ÇÔ¼ö
+    //ì‚­ì œ í•¨ìˆ˜
     element pop(StackType *s)
     {
         if(is_empty(s)) {
-            fprintf(stderr, "½ºÅÃ °ø¹é ¿¡·¯\n");
-            exit(1); //¿¡·¯¸Þ¼¼Áö¸¦ ³²±â¸ç ¹Ù·Î ÇÁ·Î¼¼½º Á¾·á - 0À¸·Î Á¾·áÇÏ´Â°Ç ¿¡·¯¸Þ¼¼Áö ¾øÀÌ Á¾·á
+            fprintf(stderr, "ìŠ¤íƒ ê³µë°± ì—ëŸ¬\n");
+            exit(1); //ì—ëŸ¬ë©”ì„¸ì§€ë¥¼ ë‚¨ê¸°ë©° ë°”ë¡œ í”„ë¡œì„¸ìŠ¤ ì¢…ë£Œ - 0ìœ¼ë¡œ ì¢…ë£Œí•˜ëŠ”ê±´ ì—ëŸ¬ë©”ì„¸ì§€ ì—†ì´ ì¢…ë£Œ
         }
         else return s -> data[(s -> top)--];
     }
 
-//ÇÇÅ© ÇÔ¼ö - º¸¿©ÁÖ±â¸¸ ÇÏ´Â°Å!
+//í”¼í¬ í•¨ìˆ˜ - ë³´ì—¬ì£¼ê¸°ë§Œ í•˜ëŠ”ê±°!
 element peek(StackType *s)
 {
     if(is_empty(s)) {
-        fprintf(stderr, "½ºÅÃ °ø¹é ¿¡·¯\n");
+        fprintf(stderr, "ìŠ¤íƒ ê³µë°± ì—ëŸ¬\n");
         exit(1);
     }
-    else return s -> data[s -> top]; // s -> topÀº s¿¡ ÀÖ´Â topÀÌ¶ó´Â Á¤¼ö! ±×³É À§Ä¡ ¾Ë·ÁÁÖ´Â°Å!
+    else return s -> data[s -> top]; // s -> topì€ sì— ìžˆëŠ” topì´ë¼ëŠ” ì •ìˆ˜! ê·¸ëƒ¥ ìœ„ì¹˜ ì•Œë ¤ì£¼ëŠ”ê±°!
 }
 
 /*
-ÀÏ¹ÝÀûÀÎ ¹è¿­ ½ºÅÃ ÇÁ·Î±×·¥
+ì¼ë°˜ì ì¸ ë°°ì—´ ìŠ¤íƒ í”„ë¡œê·¸ëž¨
 
 int main(void)
 {
@@ -77,7 +77,7 @@ int main(void)
 
 */
 
-//µ¿Àû ½ºÅÃ ÇÁ·Î±×·¥
+//ë™ì  ìŠ¤íƒ í”„ë¡œê·¸ëž¨
 /*
 int main (void)
 {
@@ -93,7 +93,7 @@ int main (void)
     free(s);
 } */
 
-//¹è¿­À» 2°³ ¸¸µé¾îº¸ÀÚ~
+//ë°°ì—´ì„ 2ê°œ ë§Œë“¤ì–´ë³´ìž~
 int main (void)
 {
     StackType a, b;
