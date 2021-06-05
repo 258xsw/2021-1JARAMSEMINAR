@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//±¸Á¶Ã¼ ¹è¿­ ÇÁ·Î±×·¥
+//êµ¬ì¡°ì²´ ë°°ì—´ í”„ë¡œê·¸ë¨
 
 #define MAX_STACK_SIZE 100
 #define MAX_STRING 100
@@ -15,43 +15,43 @@ typedef struct {
 element stack[MAX_STACK_SIZE];
 int top = -1;
 
-//°ø¹é »óÅÂ °ËÃâ ÇÔ¼ö
+//ê³µë°± ìƒíƒœ ê²€ì¶œ í•¨ìˆ˜
 int is_empty()
 {
     return (top == -1);
 }
 
-//Æ÷È­ »óÅÂ °ËÃâ ÇÔ¼ö
+//í¬í™” ìƒíƒœ ê²€ì¶œ í•¨ìˆ˜
 int is_full()
 {
     return (top == (MAX_STACK_SIZE - 1));
 }
 
-//»ğÀÔ ÇÔ¼ö
+//ì‚½ì… í•¨ìˆ˜
 void push(element item)
 {
     if (is_full()){
-        fprintf(stderr, "½ºÅÃ Æ÷È­ ¿¡·¯\n");  //ÄÜ¼Ö¿¡ ¿¡·¯ ¸Ş¼¼Áö¸¦ ¶ç¿ì´Â°Ç°¡?
+        fprintf(stderr, "ìŠ¤íƒ í¬í™” ì—ëŸ¬\n");  //ì½˜ì†”ì— ì—ëŸ¬ ë©”ì„¸ì§€ë¥¼ ë„ìš°ëŠ”ê±´ê°€?
         return;
     }
-    else stack[++top] = item; //top°ªÀ» ´Ã¸®°í ³Ö±â!
+    else stack[++top] = item; //topê°’ì„ ëŠ˜ë¦¬ê³  ë„£ê¸°!
 }
 
-//»èÁ¦ ÇÔ¼ö
+//ì‚­ì œ í•¨ìˆ˜
 element pop()
 {
     if(is_empty()){
-        fprintf(stderr, "½ºÅÃ °ø¹é ¿¡·¯\n");
+        fprintf(stderr, "ìŠ¤íƒ ê³µë°± ì—ëŸ¬\n");
         exit(1);
     }
-    else return stack[top--]; //³Ö°í(Ãâ·ÂÇÏ°í) top°ª ÁÙÀÌ±â!
+    else return stack[top--]; //ë„£ê³ (ì¶œë ¥í•˜ê³ ) topê°’ ì¤„ì´ê¸°!
 }
 
-//ÇÇÅ© ÇÔ¼ö - ½ºÅÃÀ» Á¦°ÅÇÏÁö ¾Ê°í º¸±â¸¸ ÇÔ 
+//í”¼í¬ í•¨ìˆ˜ - ìŠ¤íƒì„ ì œê±°í•˜ì§€ ì•Šê³  ë³´ê¸°ë§Œ í•¨ 
 element peek()
 {
     if(is_empty()){
-        fprintf(stderr, "½ºÅÃ °ø¹é ¿¡·¯\n");
+        fprintf(stderr, "ìŠ¤íƒ ê³µë°± ì—ëŸ¬\n");
         exit(1);
     }
     else return stack[top];
@@ -67,8 +67,8 @@ int main(void)
     push(ie);
     oe = pop();
 
-    printf("ÇĞ¹ø : %d\n", oe.student_no);
-    printf("ÀÌ¸§ : %s\n", oe.name);
-    printf("ÁÖ¼Ò : %s\n", oe.address);
+    printf("í•™ë²ˆ : %d\n", oe.student_no);
+    printf("ì´ë¦„ : %s\n", oe.name);
+    printf("ì£¼ì†Œ : %s\n", oe.address);
     return 0;
 }
